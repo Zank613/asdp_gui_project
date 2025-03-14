@@ -123,7 +123,7 @@ main(void)
         /* handle error if needed */
     }
 
-    
+
     nk_sdl_font_stash_end();
 
     if (!default_font)
@@ -214,8 +214,6 @@ main(void)
         nk_sdl_render(NK_ANTI_ALIASING_ON);
 
         /* Optionally, draw the logo in the bottom-right corner with SDL
-           (if you don't want to do it via Nuklear).
-           For example: */
            
            if (g_logo_texture)
            {
@@ -228,6 +226,7 @@ main(void)
                };
                SDL_RenderCopy(renderer, g_logo_texture, NULL, &dest);
            }
+               */
 
         /* Present everything */
         SDL_RenderPresent(renderer);
