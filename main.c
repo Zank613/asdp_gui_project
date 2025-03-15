@@ -1,9 +1,6 @@
 #include "asdp_define.h"    // Includes SDL, Nuklear, etc.
 #include <SDL2/SDL_image.h> // For IMG_Load and PNG loading
 
-#define WINDOW_WIDTH  800
-#define WINDOW_HEIGHT 600
-
 /* Forward-declare any functions from main_menu.h, play_menu.h, etc. */
 extern void render_main_menu(struct nk_context *ctx, MenuState *current_menu);
 extern void render_play_menu(struct nk_context *ctx, PlayState *current_play);
@@ -12,7 +9,7 @@ extern void render_leaderboards_menu(struct nk_context *ctx, LeaderboardState *c
 /* Global font pointer for the title font */
 struct nk_font *title_font = NULL;
 
-/* Global or static textures for background/logo */
+/* static textures for background/logo */
 static SDL_Texture *g_background_texture = NULL;
 static SDL_Texture *g_logo_texture       = NULL;
 
@@ -52,8 +49,7 @@ static int load_textures(SDL_Renderer *renderer)
     return 1; /* success */
 }
 
-int
-main(void)
+int main(int argc, char *argv[])
 {
     /* Initialize SDL */
     if (SDL_Init(SDL_INIT_VIDEO) < 0)
@@ -144,6 +140,7 @@ main(void)
     MenuState current_menu = MENU_MAIN;
     PlayState current_play = PLAY_MAIN;
     LeaderboardState current_leaderboard = LEADERBOARD_MAIN;
+    OptionState current_option = OPTIONS_MAIN;
     int running = 1;
     SDL_Event event;
 
