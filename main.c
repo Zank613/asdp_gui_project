@@ -210,7 +210,7 @@ int main(int argc, char *argv[])
         /* Draw Nuklear UI on top of the background */
         nk_sdl_render(NK_ANTI_ALIASING_ON);
 
-        /* Optionally, draw the logo in the bottom-right corner with SDL
+        /* Optionally, draw the logo in the bottom-right corner with SDL */
            
            if (g_logo_texture)
            {
@@ -223,7 +223,7 @@ int main(int argc, char *argv[])
                };
                SDL_RenderCopy(renderer, g_logo_texture, NULL, &dest);
            }
-               */
+               
 
         /* Present everything */
         SDL_RenderPresent(renderer);
